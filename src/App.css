@@ -3,3 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+.App {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3,1fr);
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border: 1px dashed white;
+  background-color: #5252AB;
+}
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+  border-top: none;
+}
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+  border-left: none;
+}
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+  border-right: none;
+}
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+  border-bottom: none;
+}
+.cell:nth-child(2), .cell:nth-child(4), .cell:nth-child(5), .cell:nth-child(6), .cell:nth-child(8) {
+  background-color: #3831af;
+}
