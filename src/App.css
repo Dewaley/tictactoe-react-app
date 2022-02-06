@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --cell-size: 100px;
+}
 .App {
   overflow: hidden;
   height: 100vh;
@@ -19,8 +22,8 @@
   grid-template-columns: repeat(3,1fr);
 }
 .cell {
-  width: 100px;
-  height: 100px;
+  width: var(--cell-size);
+  height: var(--cell-size);
   background-color: black;
   border: 1px dashed white;
   background-color: #5252AB;
@@ -39,4 +42,16 @@
 }
 .cell:nth-child(2), .cell:nth-child(4), .cell:nth-child(5), .cell:nth-child(6), .cell:nth-child(8) {
   background-color: #3831af;
+}
+.cell:nth-child(1) {
+  border-top-left-radius: 35px;
+}
+.cell:nth-child(9) {
+  border-bottom-right-radius: 35px;
+}
+.cell:nth-child(3) {
+  border-top-right-radius: 35px;
+}
+.cell:nth-child(7) {
+  border-bottom-left-radius: 35px;
 }
