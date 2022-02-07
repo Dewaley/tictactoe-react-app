@@ -5,6 +5,7 @@
 }
 :root {
   --cell-size: 100px;
+  --icon-size: calc(var(--cell-size)*.9);
 }
 .App {
   overflow: hidden;
@@ -24,8 +25,39 @@
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: black;
   border: 1px dashed white;
+  background-color: #5252AB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cell.x::after, .cell.x::before{
+  content: "";
+  width: calc(var(--icon-size)*0.15);
+  height: var(--icon-size);
+  background-color: #F6517E;
+  position: absolute;
+}
+.cell.x::before {
+  transform: rotate(45deg);
+}
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+.cell.o::after, .cell.o::before{
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+}
+.cell.o::before{
+  width: calc(var(--icon-size)*.8);
+  height: calc(var(--icon-size)*.8);
+  background-color: #008BF1;
+}
+.cell.o::after{
+  width: calc(var(--icon-size)*.5);
+  height: calc(var(--icon-size)*.5);
   background-color: #5252AB;
 }
 .cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
@@ -39,9 +71,6 @@
 }
 .cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
   border-bottom: none;
-}
-.cell:nth-child(2), .cell:nth-child(4), .cell:nth-child(5), .cell:nth-child(6), .cell:nth-child(8) {
-  background-color: #3831af;
 }
 .cell:nth-child(1) {
   border-top-left-radius: 35px;
