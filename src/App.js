@@ -7,7 +7,7 @@ function App() {
         <div className="player1"></div>
         <div className="player2"></div>
       </div>
-      <div className="board">
+      <div className="board o">
         <div className="cell x"></div>
         <div className="cell o"></div>
         <div className="cell"></div>
