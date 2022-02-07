@@ -22,8 +22,6 @@
   align-content: center;
   grid-template-columns: repeat(3, 1fr);
 }
-.board.x .cell:hover {
-}
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
@@ -34,6 +32,10 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+}
+.cell.x::after,
+.cell.x::before {
+  background-color: #f6517e;
 }
 .cell.x::after,
 .cell.x::before,
