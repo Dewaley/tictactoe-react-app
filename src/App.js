@@ -1,20 +1,30 @@
 import './App.css';
 
 function App() {
-  // const xClass = 'x';
-  // const oClass = 'o';
-  // var oTurn;
+  const xClass = 'x';
+  const oClass = 'o';
+  var oTurn;
   const cells = document.querySelectorAll('.cell');
 
   const handleClick = (e) => {
-    if (!e.target.classList.contains('clicked')) {
-      e.target.classList.add('clicked')
-      console.log(e.target.classList)
+    const cell = e.target;
+    const currentClass = oTurn ? oClass : xClass;
+
+    if (!cell.classList.contains('clicked')) {
+      cell.classList.add('clicked');
     }
+    const placeMark = (e) => {
+      cell.classList.add(currentClass);
+    };
+    placeMark();
+    const swapTurns = (e) => {
+      oTurn = !oTurn
+    }
+    swapTurns()
   };
 
-  for(let index=0; index<=cells; index++){
-    handleClick()
+  for (let index = 0; index <= cells; index++) {
+    handleClick();
   }
 
   return (
@@ -24,7 +34,7 @@ function App() {
         <div className='player2'></div>
       </div>
       <div className='board x'>
-        <div className='cell x'></div>
+        <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
