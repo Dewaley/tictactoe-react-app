@@ -5,19 +5,20 @@ function App() {
   // const oClass = 'o';
   // var oTurn;
   const cells = document.querySelectorAll('.cell');
+  
+  const handleClick = (e) => {
+    if (e.target.classList.contains('clicked')) {
+      console.log(e.target.className);
+    } else {
+      console.log(e.target.className);
+    }
+  };
+
   for(let index=0; index<=cells; index++){
     handleClick()
   }
 
-  const handleClick = (e) => {
-    if (e.target.classList.contains("clicked")){
-      console.log(e.target.className)
-    } else{
-      console.log(e.target.className);
-    }
-    // e.target.classList.add("clicked")
-    
-  };
+  
   // function play(cell, currentClass) {
   //   cell.classlist.add(currentClass);
   // };
