@@ -10,7 +10,13 @@ function App() {
   }
 
   const handleClick = (e) => {
-    console.log(2)
+    if (e.target.classList.contains("clicked")){
+      console.log(e.target.className)
+    } else{
+      console.log(e.target.className);
+    }
+    // e.target.classList.add("clicked")
+    
   };
   // function play(cell, currentClass) {
   //   cell.classlist.add(currentClass);
@@ -23,7 +29,7 @@ function App() {
       </div>
       <div className='board x'>
         <div className='cell x'></div>
-        <div className='cell' onClick={handleClick}></div>
+        <div className='cell clicked' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
