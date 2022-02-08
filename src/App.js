@@ -5,12 +5,10 @@ function App() {
   const oClass = 'o';
   var oTurn;
   const cells = document.querySelectorAll('.cell');
-  const board = document.getElementsByClassName('board');
 
   const handleClick = (e) => {
     const cell = e.target;
     const currentClass = oTurn ? oClass : xClass;
-console.log(board.classList.add("boy"))
     if (!cell.classList.contains('clicked')) {
       cell.classList.add('clicked');
       const placeMark = (e) => {
