@@ -5,12 +5,11 @@ function App() {
   // const oClass = 'o';
   // var oTurn;
   const cells = document.querySelectorAll('.cell');
-  
+
   const handleClick = (e) => {
-    if (e.target.classList.contains('clicked')) {
-      console.log(e.target.className);
-    } else {
-      console.log(e.target.className);
+    if (!e.target.classList.contains('clicked')) {
+      e.target.classList.add('clicked')
+      console.log(e.target.classList)
     }
   };
 
@@ -18,10 +17,6 @@ function App() {
     handleClick()
   }
 
-  
-  // function play(cell, currentClass) {
-  //   cell.classlist.add(currentClass);
-  // };
   return (
     <div className='App'>
       <div className='scoreboard'>
@@ -30,7 +25,7 @@ function App() {
       </div>
       <div className='board x'>
         <div className='cell x'></div>
-        <div className='cell clicked' onClick={handleClick}></div>
+        <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
         <div className='cell' onClick={handleClick}></div>
