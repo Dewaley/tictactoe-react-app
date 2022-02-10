@@ -3,6 +3,16 @@ import React, { useState } from 'react';
 
 function App() {
   const [currentClass, setCurrentClass] = useState('x');
+  const winning_combinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 5],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
   const handleClick = (e) => {
     const cell = e.target;
     if (!cell.classList.contains('clicked')) {
@@ -19,7 +29,6 @@ function App() {
         swapTurns();
       };
       placeMark();
-      alert(currentClass);
     }
   };
   return (
